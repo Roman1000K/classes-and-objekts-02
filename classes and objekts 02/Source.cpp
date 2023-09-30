@@ -6,6 +6,10 @@ private:
     int num;
     
 public:
+    Counter(int initial = 0) : num(initial) 
+    {
+    }
+
     int increase() 
     {
         return num++;
@@ -19,38 +23,26 @@ public:
     void currentValue()
     {
         std::cout << num << "\n";
-    }
-
-    int mod(int num1)
-    {
-        return num = num1;
-    }
+    }  
 };
 
 int main() {
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
 
-    Counter count;
+  
    
     std::cout << "Вы хотите указать начальное значение счётчика ? Введите да или нет : ";
-
     std::string decision;
     std::cin >> decision;
 
+    int initial = 0;
     if (decision == "да")
     {
-        std::cout << "Введите начальное значение счётчика: ";
-
-        int num1;
-        std::cin >> num1;
-
-        count.mod(num1);
+        std::cout << "Введите начальное значение счётчика: ";        
+        std::cin >> initial;        
     }
-    else 
-    {
-        count.mod(1);
-    }
+    Counter count(initial);
 
     while (true)
     {
